@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The Pig dice game is asimple, yet entertaining game that involves rolling dice to accumulate points while managing the risk of losing all points in a single turn. This game is typically played by two or more participants and requires standard six-sided dice.
+The Pig dice game is a simple, yet entertaining game that involves rolling dice to accumulate points while managing the risk of losing all points in a single turn. This game is typically played by two or more participants and requires standard six-sided dice.
 
 The Pig dice game frequently acts as a straightforward illustration when teaching probability concepts, suitable for students from middle school onwards. Additionally, it offers practical applications for teaching computer science, spanning from basic introductory classes to more advanced machine learning content.
 
