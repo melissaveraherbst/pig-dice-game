@@ -1,5 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 
+:root {
+	--color-1: #f72585;
+	--color-2: #7209b7;
+	--color-3: #3a0ca3;
+	--color-4: #4361ee;
+	--color-5: #4cc9f0;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -13,13 +21,47 @@ html {
 
 body {
 	font-family: "Nunito", sans-serif;
-	font-weight: 400;
 	height: 100vh;
-	color: #333;
-	background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
+	background: hsla(276, 91%, 38%, 1);
+	
+	background: linear-gradient(315deg, 
+	var(--color-1) 10%, 
+	var(--color-2), 
+	var(--color-3), 
+	var(--color-4), 
+	var(--color-5));
+	
+	background: -moz-linear-gradient(315deg,
+	var(--color-1) 10%, 
+	var(--color-2), 
+	var(--color-3), 
+	var(--color-4), 
+	var(--color-5));
+	
+	background: -webkit-linear-gradient(315deg, var(--color-1) 10%, 
+	var(--color-2), 
+	var(--color-3), 
+	var(--color-4), 
+	var(--color-5));
+
+	background-size: 400% 400%;
+	animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 /* LAYOUT */
