@@ -9,9 +9,12 @@ const scoreElementP2 = document.querySelector("#score--2");
 const currentScoreElementP2 = document.querySelector("#current--2");
 // buttons
 const imgDie = document.querySelector("#die");
-const btnDie = document.querySelector("#btn--roll");
+const btnRollDie = document.querySelector("#btn--roll");
 const btnHold = document.querySelector("#btn--hold");
 const btnNew = document.querySelector("#btn--new");
+// modal
+const modal = document.querySelector("#modal");
+const btnToggleModal = document.querySelector("#btn--open-modal");
 
 // functions
 const resetCurrentScores = () => {
@@ -38,6 +41,9 @@ const newGame = () => {
 	// reset current and total scores
 	resetCurrentScores();
 	resetTotalScores();
+	// enable roll and hold buttons
+	btnRollDie.disabled = false;
+	btnHold.disabled = false;
 };
 
 const switchPlayers = () => {
@@ -50,11 +56,10 @@ newGame();
 winningScore = 100;
 
 // roll the die functionalities
-btnDie.addEventListener("click", () => {
+btnRollDie.addEventListener("click", () => {
 	// generate random number 1-6
 	const dieRoll = Math.trunc(Math.random() * 6) + 1;
-	imgDie.src = `die-${dieRoll}.png`;
-	imgDie.classList.remove("hidden");
+	imgDie.src = `/images/die-${dieRoll}.png`;
 	if (dieRoll !== 1) {
 		if (player1.classList.contains("player--active")) {
 			// P1 is active
@@ -70,6 +75,9 @@ btnDie.addEventListener("click", () => {
 		resetCurrentScores();
 		switchPlayers();
 	}
+	// die animation
+	imgDie.classList.remove("animate");
+	setTimeout(() => imgDie.classList.add("animate"), 0);
 });
 
 btnHold.addEventListener("click", () => {
@@ -83,13 +91,17 @@ btnHold.addEventListener("click", () => {
 		scoreP2 = scoreP2 + currentScoreP2;
 		scoreElementP2.textContent = scoreP2;
 	}
-	// 2. check if current player's score is >= 100
-	if (scoreP1 >= 100) {
+	// 2. check if current player's score is >= the winning score (default is 100)
+	if (scoreP1 >= winningScore) {
 		player1.classList.add("player--winner");
-	} else if (scoreP2 >= 100) {
+		btnRollDie.disabled = true;
+		btnHold.disabled = true;
+	} else if (scoreP2 >= winningScore) {
 		player2.classList.add("player--winner");
+		btnRollDie.disabled = true;
+		btnHold.disabled = true;
 	} else {
-		// 3. reset current scores
+		// 3. reset current round scores
 		resetCurrentScores();
 		// 4. switch players
 		switchPlayers();
@@ -98,4 +110,11 @@ btnHold.addEventListener("click", () => {
 
 btnNew.addEventListener("click", () => {
 	newGame();
+});
+
+btnToggleModal.addEventListener("click", (e) => {
+	e.target.innerText === "Instructions" ?
+		e.target.innerHTML = `<i class="fa-solid fa-caret-left"></i>Back to Game` :
+		e.target.innerHTML = `<i class="fa-solid fa-circle-info"></i>Instructions`;
+	modal.classList.toggle("hidden");
 });
