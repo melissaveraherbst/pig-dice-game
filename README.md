@@ -33,4 +33,8 @@ The aim is to be the first player to reach a score of 100 points.
 - Tailor your approach based on the game situation; take more risks if trailing and aim to catch up.
 - Explore variations or house rules for added excitement.
 
+## Screenshot
+
+![127 0 0 1_5501_(iPad Mini)](https://github.com/melissaveraherbst/pig-dice-game/assets/84316275/5db80429-59a4-4e83-9ec0-581a6a2fc426)
+
 Made with 💜 by Melissa V. Herbst
