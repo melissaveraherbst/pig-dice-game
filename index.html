@@ -17,7 +17,7 @@
     <!-- player 1 -->
     <section class="player player--active" id="player--1">
       <div class="player--info">
-        <p class="name" id="name--1">Player 1</p>
+        <p class="name" id="name--1" contenteditable="true">Player 1</p>
         <p class="message hidden">You Win!</p>
       </div>
       <div class="current">
@@ -26,13 +26,14 @@
       </div>
       <div class="total">
         <p class="total-label">Total</p>
-        <p class="total-score" id="score--1">43</p>
+        <p class="total-score" id="score--1">0</p>
+        <p class="winning-streak">Winning Streak: <span id="streak--1">0</span></p>
       </div>
     </section>
     <!-- player 2 -->
     <section class="player" id="player--2">
       <div class="player--info">
-        <p class="name" id="name--2">Player 2</p>
+        <p class="name" id="name--2" contenteditable="true">Player 2</p>
         <p class="message hidden">You Win!</p>
       </div>
       <div class="current">
@@ -41,7 +42,8 @@
       </div>
       <div class="total">
         <p class="total-label">Total</p>
-        <p class="total-score" id="score--2">24</p>
+        <p class="total-score" id="score--2">0</p>
+        <p class="winning-streak">Winning Streak: <span id="streak--2">0</span></p>
       </div>
     </section>
     <!-- operations -->
@@ -56,7 +58,7 @@
       </div>
     </section>
   </main>
-  <button class="btn--open-modal" id="btn--open-modal"><i class="fa-solid fa-circle-info"></i>Instructions</button>
+  <button class="btn--open-modal" id="btn--open-modal"><i class="fa-solid fa-circle-info"></i></button>
   <aside class="modal hidden" id="modal">
     <div class="modal-content">
       <h4>Objective</h4>
@@ -66,19 +68,20 @@
       <h4>Gameplay</h4>
       <p>
         A player throws a die and scores as many points as the total shown on the die providing the die doesn't roll
-        a 1. The
-        player may continue rolling and accumulating points (but risk rolling a 1) or end his turn.
+        a 1. The player may continue rolling and accumulating points (but risk rolling a 1) or end his turn.
       </p>
       <p>
         If the player rolls a 1 his turn is over, he loses all points he accumulated that turn, and he passes the die to
-        the
-        next player.
+        the next player.
       </p>
       <p>
         Play passes from player to player until a winner is determined.
       </p>
     </div>
   </aside>
+  <!-- <aside> -->
+    <button class="btn--reset" id="btn--reset"><i class="fa-solid fa-arrows-rotate"></i>Reset</button>
+  <!-- </aside> -->
   <script src="/js/script.js"></script>
 </body>
 

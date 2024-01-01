@@ -1,22 +1,37 @@
-// assign DOM elements to variables
+// -----------------------------------------------
+// DOM ELEMENTS
+// -----------------------------------------------
 // player 1
 const player1 = document.querySelector("#player--1");
 const scoreElementP1 = document.querySelector("#score--1");
 const currentScoreElementP1 = document.querySelector("#current--1");
+const winningStreakElementP1 = document.querySelector("#streak--1");
+const nameElementP1 = document.querySelector("#name--1");
 // player 2
 const player2 = document.querySelector("#player--2");
 const scoreElementP2 = document.querySelector("#score--2");
 const currentScoreElementP2 = document.querySelector("#current--2");
+const winningStreakElementP2 = document.querySelector("#streak--2");
+const nameElementP2 = document.querySelector("#name--2");
 // buttons
 const imgDie = document.querySelector("#die");
 const btnRollDie = document.querySelector("#btn--roll");
 const btnHold = document.querySelector("#btn--hold");
 const btnNew = document.querySelector("#btn--new");
+const btnReset = document.querySelector("#btn--reset");
 // modal
 const modal = document.querySelector("#modal");
 const btnToggleModal = document.querySelector("#btn--open-modal");
 
-// functions
+
+// -----------------------------------------------
+// FUNCTIONS
+// -----------------------------------------------
+const switchPlayers = () => {
+	player1.classList.toggle("player--active");
+	player2.classList.toggle("player--active");
+};
+
 const resetCurrentScores = () => {
 	currentScoreP1 = 0;
 	currentScoreElementP1.textContent = currentScoreP1;
@@ -31,6 +46,16 @@ const resetTotalScores = () => {
 	scoreElementP2.textContent = scoreP2;
 };
 
+const disableButtons = () => {
+	btnRollDie.disabled = true;
+	btnHold.disabled = true;
+}
+
+const enableButtons = () => {
+	btnRollDie.disabled = false;
+	btnHold.disabled = false;
+}
+
 const newGame = () => {
 	// remove winner class
 	player1.classList.remove("player--winner");
@@ -42,19 +67,28 @@ const newGame = () => {
 	resetCurrentScores();
 	resetTotalScores();
 	// enable roll and hold buttons
-	btnRollDie.disabled = false;
-	btnHold.disabled = false;
+	enableButtons();
 };
 
-const switchPlayers = () => {
-	player1.classList.toggle("player--active");
-	player2.classList.toggle("player--active");
+const resetAll = () => {
+	winningStreakP1 = 0;
+	winningStreakElementP1.textContent = 0;
+	nameElementP1.textContent = "Player 1";
+	winningStreakP2 = 0;
+	winningStreakElementP2.textContent = 0;
+	nameElementP2.textContent = "Player 2";
 };
 
 // game starting conditions
 newGame();
 winningScore = 100;
+winningStreakP1 = 20;
+winningStreakP2 = 20;
 
+
+// -----------------------------------------------
+// EVENT LISTENERS
+// -----------------------------------------------
 // roll the die functionalities
 btnRollDie.addEventListener("click", () => {
 	// generate random number 1-6
@@ -94,12 +128,18 @@ btnHold.addEventListener("click", () => {
 	// 2. check if current player's score is >= the winning score (default is 100)
 	if (scoreP1 >= winningScore) {
 		player1.classList.add("player--winner");
-		btnRollDie.disabled = true;
-		btnHold.disabled = true;
+		// update P1 winning streak
+		winningStreakP1 += 1;
+		winningStreakElementP1.textContent = winningStreakP1;
+		// disable game buttons
+		disableButtons();
 	} else if (scoreP2 >= winningScore) {
 		player2.classList.add("player--winner");
-		btnRollDie.disabled = true;
-		btnHold.disabled = true;
+		// update P2 winning streak
+		winningStreakP2 += 1;
+		winningStreakElementP2.textContent = winningStreakP2;
+		// disable game buttons
+		disableButtons();
 	} else {
 		// 3. reset current round scores
 		resetCurrentScores();
@@ -108,13 +148,13 @@ btnHold.addEventListener("click", () => {
 	}
 });
 
-btnNew.addEventListener("click", () => {
-	newGame();
-});
+
+btnNew.addEventListener("click", newGame);
+
+btnReset.addEventListener("click", resetAll);
 
 btnToggleModal.addEventListener("click", (e) => {
-	e.target.innerText === "Instructions" ?
-		e.target.innerHTML = `<i class="fa-solid fa-caret-left"></i>Back to Game` :
-		e.target.innerHTML = `<i class="fa-solid fa-circle-info"></i>Instructions`;
+	e.target.classList.toggle("fa-circle-info");
+	e.target.classList.toggle("fa-circle-chevron-left");
 	modal.classList.toggle("hidden");
 });
