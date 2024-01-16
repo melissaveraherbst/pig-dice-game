@@ -1,12 +1,17 @@
-# Pig - Dice Game
+<div align=center>
 
-## Introduction
+<img src="" width=300px/>
+  
+# Pig Dice Game
+
+</div>
+
 
 The Pig dice game is a simple, yet entertaining game that involves rolling dice to accumulate points while managing the risk of losing all points in a single turn. This game is typically played by two or more participants and requires standard six-sided dice.
 
 The Pig dice game frequently acts as a straightforward illustration when teaching probability concepts, suitable for students from middle school onwards. Additionally, it offers practical applications for teaching computer science, spanning from basic introductory classes to more advanced machine learning content.
 
-## How to Play
+## 🎲 How to Play
 
 ### Objective
 
@@ -33,8 +38,9 @@ The aim is to be the first player to reach a score of 100 points.
 - Tailor your approach based on the game situation; take more risks if trailing and aim to catch up.
 - Explore variations or house rules for added excitement.
 
-## Screenshot
+## 📷 Screenshot
 
 ![127 0 0 1_5501_index html(iPad Mini)](https://github.com/melissaveraherbst/pig-dice-game/assets/84316275/26f98b47-69e9-4f64-9b98-7a8b1cc11607)
 
+---
 Made with 💜 by Melissa V. Herbst
