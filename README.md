@@ -1,11 +1,12 @@
 <div align=center>
 
-<img src="" width=300px/>
+<img src="https://github.com/melissaveraherbst/pig-dice-game/assets/84316275/eda61432-a9d9-4e98-b0d4-ca148ddbc213" width=225px/>
   
-# Pig Dice Game
+# PIG Dice Game
+**A project from The Complete JavaScript Course 2021 by Jonas Schedtmann on Udemy**
+<hr>
 
 </div>
-
 
 The Pig dice game is a simple, yet entertaining game that involves rolling dice to accumulate points while managing the risk of losing all points in a single turn. This game is typically played by two or more participants and requires standard six-sided dice.
 
