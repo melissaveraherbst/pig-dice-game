@@ -41,7 +41,7 @@ The aim is to be the first player to reach a score of 100 points.
 
 ## 📷 Screenshot
 
-![127 0 0 1_5501_index html(iPad Mini)](https://github.com/melissaveraherbst/pig-dice-game/assets/84316275/26f98b47-69e9-4f64-9b98-7a8b1cc11607)
+![127 0 0 1_5501_index html(iPad Mini)](https://github.com/melissaveraherbst/pig-dice-game/assets/84316275/4737e521-acff-4d61-b8e3-25c42b5e5392)
 
 ---
 Made with 💜 by Melissa V. Herbst
