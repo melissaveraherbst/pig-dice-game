@@ -1,6 +1,6 @@
 <div align=center>
 
-<img src="https://github.com/melissaveraherbst/pig-dice-game/assets/84316275/eda61432-a9d9-4e98-b0d4-ca148ddbc213" width=15%/>
+<img src="https://github.com/melissaveraherbst/pig-dice-game/assets/84316275/eda61432-a9d9-4e98-b0d4-ca148ddbc213" width=20% >
   
 # PIG Dice Game
 **A project from The Complete JavaScript Course 2021 by Jonas Schedtmann on Udemy**
